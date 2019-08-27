@@ -1,0 +1,43 @@
+<c3p0-config>
+    <!-- 使用默认的配置读取连接池对象 -->
+    <default-config>
+        <!--  连接参数 -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <property name="initialPoolSize" value="20" />
+        <property name="minPoolSize" value="10" />
+        <property name="maxPoolSize" value="60" />
+        <property name="maxIdleTime" value="7200" />
+        <property name="idleConnectionTestPeriod" value="360" />
+        <property name="preferredTestQuery" value="select 1" />
+        <property name="acquireIncrement" value="5" />
+        <property name="acquireRetryAttempts" value="50" />
+        <property name="acquireRetryDelay" value="1000" />
+        <property name="breakAfterAcquireFailure" value="true" />
+        <property name="checkoutTimeout" value="20000" />
+        <property name="autoCommitOnClose" value="false" />
+        <property name="forceIgnoreUnresolvedTransactions" value="false" />
+        <property name="unreturnedConnectionTimeout" value="1000" />
+        <property name="maxStatements" value="0" />
+        <property name="maxStatementsPerConnection" value="0" />
+        <property name="testConnectionOnCheckin" value="true" />
+        <property name="testConnectionOnCheckout" value="false" />
+        <property name="usesTraditionalReflectiveProxies" value="false" />
+        <property name="numHelperThreads" value="5" />
+    </default-config>
+
+    <named-config name="otherc3p0">
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <property name="initialPoolSize">5</property>
+        <property name="maxPoolSize">10</property>
+        <property name="checkoutTimeout">3000</property>
+    </named-config>
+
+</c3p0-config>
